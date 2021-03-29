@@ -1,4 +1,95 @@
 \documentclass{article}
 \begin{document}
 
+%Sto scrivendo un commento
+
+Bisogna specificare qual è il file main.tex da cui parte la compilazione
+Si specifixa il tipo di documento tra le parentesi
+Ogni tag si dichiara con uno slash 
+Ogni documento ha un tag di inizio ed uno di fine che delimitano il documento
+
+\section{Prima Sezione - A capo}
+\label{sezioneACapo}
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+Se vado a capo semplicemente si ha un piccolo spazio sulla sinistra. 
+
+\noindent Vado a capo senza lasciare lo sapzio sulla sinistra con il tag noindent. 
+
+\subsection{Sezione Interna - Caratteri}
+\textit{Font Italico}
+\textbf{Grassetto ctrl+B}
+\underline{Sottolineato}
+
+\subsubsection{Sezione Interna 2 - Liste Puntate}
+Si inizia un nuovo blocco con i tag begin e tra le parentesi la classe \textbf{itemize} per avere i punti, altrimenti si utilizza come classe \textbf{enumerate} per avere i numeri
+\begin{itemize}
+    \item elemento puntato 1
+    \item elemento puntato 2
+    \item elemento puntato 3
+\end{itemize}
+\begin{enumerate}
+    \item elemento numerico 1
+    \item elemento numerico 2
+    \item elemento numerico 3
+\end{enumerate}
+Per creare una lista di lista si annidano i tag \textbf{begin}
+\begin{enumerate}
+\item elemento padre 1
+\item elemento padre 2
+    \begin{itemize}
+        \item elemento figlio 1
+        \item elemento figlio 2
+        \item elemento figlio 3
+    \end{itemize}
+\end{enumerate}
+Per specificare il simbolo dell'elenco si usano le []
+\begin{itemize}
+    \item [*] stella
+\end{itemize}
+
+\paragraph{Paragrafo} - Sezioni e subsezioni 
+
+\section{Tabelle}
+Per inserire una tabella è sufficiente scrivere il tag Begin e come classe \textbf{table}
+
+ il tag \textbf{hline} identifica le righe orizzontali ed i campi si scrivono con and\textbf{ &}
+    slesh slesh va a capo tra le varie colonne. [0.5ex] è la distanza tra gli elementi
+\begin{table}
+%centering centra la tabella
+    \centering
+    % Nella "zona table c'è una zona "tabular" che contiene la tabella"
+    % Il simbolo | tra le c (centred) oppure l (left) oppure r (rigth) indica le righe delle colonne e dove % si scriverà il testo all'interno 
+    
+    \begin{tabular}{c|c|l}
+    \hline
+    Col1 & Col2 & Col3 \\[0.5ex]
+    \hline\hline
+    1   &   2   &   3  \\
+    4   &   5   &   6 \\ [5ex]
+    \hline %disegna l'ultima riga 
+    \end{tabular}
+    \caption{Prova Tabella 1}
+    \label{TabellaUno}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|c|l}
+    \hline
+    Col1 & Col2 & Col3 \\[0.5ex]
+    \hline\hline
+    10   &   20   &   30  \\
+    40   &   50   &   60 \\ [5ex]
+    \hline 
+    \end{tabular}
+    \caption{Prova Tabella 2}
+    \label{TabellaDue}
+\end{table}
+
+\subsection{Reference}
+come illustrato in tabella \ref{TabellaUno} Usiamo il tag \textbf{ref} per puntare alla tabella che ha come tag \textbf{label} quello insierito tra le graffe {}. 
+\\In questo modo le dipendenze si aggiorneranno automaticamente in caso di aggiornamento.
+\\Si possono riferite anche sezioni se si inserisce il tag \textbf{label}. 
+\\Sezione Riferita \ref{sezioneACapo}
 \end{document}
