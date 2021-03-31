@@ -7,4 +7,5 @@
 <li>Piè di pagina</li>
 <li>Indice e Bibliografia</li>
 <li>Java e Python Code</li>
+<li>Margini e Link</li>
 </ol>
