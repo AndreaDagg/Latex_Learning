@@ -1,4 +1,7 @@
 \documentclass{article}
+\usepackage[english, italian]{babel}
+% L'ultima lingua dichiarata nelle parentesi è quella utilizzata nel documento da latex
+
 \begin{document}
 
 %Sto scrivendo un commento
@@ -7,22 +10,26 @@ Bisogna specificare qual è il file main.tex da cui parte la compilazione
 Si specifixa il tipo di documento tra le parentesi
 Ogni tag si dichiara con uno slash 
 Ogni documento ha un tag di inizio ed uno di fine che delimitano il documento
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANDARE A CAPO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prima Sezione - A capo}
 \label{sezioneACapo}
 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 
 Se vado a capo semplicemente si ha un piccolo spazio sulla sinistra. 
 
-\noindent Vado a capo senza lasciare lo sapzio sulla sinistra con il tag noindent. 
+\noindent Vado a capo senza lasciare lo sapzio sulla sinistra con il doppio $\backslash\backslash$ oppure con il tag $\backslash$noindent. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARATTERI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sezione Interna - Caratteri}
 \textit{Font Italico}
-\textbf{Grassetto ctrl+B}
+\textbf{Grassetto ctrl+B} 
 \underline{Sottolineato}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ELENCHI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Sezione Interna 2 - Liste Puntate}
-Si inizia un nuovo blocco con i tag begin e tra le parentesi la classe \textbf{itemize} per avere i punti, altrimenti si utilizza come classe \textbf{enumerate} per avere i numeri
+Si inizia un nuovo blocco con i tag begin e tra le parentesi la classe
+\textbf{itemize} per avere i punti, altrimenti si utilizza come classe \textbf{enumerate} per avere i numeri
+
 \begin{itemize}
     \item elemento puntato 1
     \item elemento puntato 2
@@ -33,6 +40,8 @@ Si inizia un nuovo blocco con i tag begin e tra le parentesi la classe \textbf{i
     \item elemento numerico 2
     \item elemento numerico 3
 \end{enumerate}
+
+
 Per creare una lista di lista si annidano i tag \textbf{begin}
 \begin{enumerate}
 \item elemento padre 1
@@ -43,18 +52,28 @@ Per creare una lista di lista si annidano i tag \textbf{begin}
         \item elemento figlio 3
     \end{itemize}
 \end{enumerate}
-Per specificare il simbolo dell'elenco si usano le []
+Per specificare il simbolo dell'elenco si usano le parentesi quadre []
 \begin{itemize}
     \item [*] stella
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definiamo un paragrafo
 \paragraph{Paragrafo} - Sezioni e subsezioni 
 
-\section{Tabelle}
-Per inserire una tabella è sufficiente scrivere il tag Begin e come classe \textbf{table}
 
- il tag \textbf{hline} identifica le righe orizzontali ed i campi si scrivono con and\textbf{e commerciale}
-    slesh slesh va a capo tra le varie colonne. [0.5ex] è la distanza tra gli elementi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABELLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tabelle}
+Per inserire una tabella è sufficiente scrivere il tag Begin e come classe
+\textbf{table}.\\
+\begin{itemize}
+    \item Il tag \textbf{hline} identifica le righe orizzontali ed i campi si scrivono con and\textbf{e commerciale \&}
+    \item $\backslash\backslash$ va a capo tra le varie colonne.
+    \item [0.5ex] è la distanza tra gli elementi. 
+\end{itemize}
+
+
+
 \begin{table}[h!]
 %centering centra la tabella
     \centering

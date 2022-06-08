@@ -1,8 +1,21 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+% === Impostazione del documento ==========================
+\documentclass[11pt, openany]{extbook}
 
-\usepackage{listings}
-\usepackage{xcolor}
+\usepackage[english,italian]{babel}
+\usepackage{setspace}
+\onehalfspace
+
+%=== Allinameto testo a sinistra =========================
+\setlength{\parindent}{0pt}
+
+
+% === Regolazione dei margini =============================
+\addtolength{\oddsidemargin}{30pt}
+\addtolength{\evensidemargin}{-30pt}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{multicol} 
+\usepackage[section]{placeins}
 
 %=== CODICE  =========================
 \usepackage{xcolor}
@@ -63,65 +76,74 @@
 } 
 
 
-\title{Code Listing}
-\date{ }
+% === Integrazione delle figure ===========================
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{{./imgs/}}
+\renewcommand{\figurename}{Fig.}
+\usepackage{subfigure}
+\usepackage[section]{placeins}
+\usepackage[nottoc]{tocbibind}
+
+% === Link Url ============================================
+% riferimenti cliccabili nel pdf
+\usepackage[pdftex]{hyperref}
+
+% Impostazione dei link nel pdf
+\hypersetup{%
+    colorlinks=true,
+    citecolor=green,
+    linkcolor=darkgray,
+    urlcolor=red,
+}   
+
+% === Per le tabelle ======================================
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% === Per la bibliografia multicolonna ====================
+\usepackage{etoolbox}
+%\usepackage[backend=biber, sorting=none]{biblatex} \addbibresource{bibliografia-tesi.bib}
+
+%\patchcmd{\thebibliography}{\list}{\begin{multicols}{2}\smaller\list}{}{}
+%\appto{\endthebibliography}{\end{multicols}}
+% === Per il testo di prova =================================
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TESTO DELLA TESI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+\frontmatter
 
-\maketitle
-
-
-\section{Java Code examples}
-\begin{lstlisting}[language=Java, caption=Java example]
-// Hello.java
-import javax.swing.JApplet;
-import java.awt.Graphics;
-
-public class Hello extends JApplet {
-    public void paintComponent(Graphics g) {
-        g.drawString("Hello, world!", 65, 95);
-    }    
-}
-\end{lstlisting}
-
-
-\section{Python Code examples}
-
-%Python code highlighting
-\begin{lstlisting}[language=Python, caption=Python example]
-import numpy as np
+	% === Frontespizio ====================================
+	\pagestyle{empty}
+	\input{0_frontespizio/1_frontespizio.tex}
     
-def incmatrix(genl1,genl2):
-    m = len(genl1)
-    n = len(genl2)
-    M = None #to become the incidence matrix
-    VT = np.zeros((n*m,1), int)  #dummy variable
-    
-    #compute the bitwise xor matrix
-    M1 = bitxormatrix(genl1)
-    M2 = np.triu(bitxormatrix(genl2),1) 
+	
 
-    for i in range(m-1):
-        for j in range(i+1, m):
-            [r,c] = np.where(M2 == M1[i,j])
-            for k in range(len(r)):
-                VT[(i)*n + r[k]] = 1;
-                VT[(i)*n + c[k]] = 1;
-                VT[(j)*n + r[k]] = 1;
-                VT[(j)*n + c[k]] = 1;
-                
-                if M is None:
-                    M = np.copy(VT)
-                else:
-                    M = np.concatenate((M, VT), 1)
-                
-                VT = np.zeros((n*m,1), int)
-    
-    return M
-\end{lstlisting}
+	
+	% === Indice ==========================================
+    \tableofcontents
+    \listoffigures
 
 
 
-\lstlistoflistings
+	% === Capitoli Tesi ===================================
+	\mainmatter 
+	\pagestyle{plain}
+	\newpage
+	\input{Learning/09_ReadME_Documentazione/1_DailyScrumDoc/1_DSDoc}
+	\input{Learning/09_ReadME_Documentazione/2_ConvenzioniGit/ConvenzioniMain}
+	
+
+
+	% === Bibliografia ====================================
+	\newpage
+	\bibliographystyle{IEEEtran}
+	\bibliography{bibliografia-tesi.bib}
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

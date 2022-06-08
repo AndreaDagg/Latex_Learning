@@ -1,0 +1,62 @@
+\chapter{Convenzioni Git}
+\label{chap:convenzioni}
+
+
+\section{Best practice per il branching}
+    \begin{itemize}
+        \item Lavorare sempre su branch propri
+        \item Staccare i branch da staging (versione stabile della repository)
+        \item Nominare il branch con la specifica della funzionalità da implementare (Es. branch: update-users-api)
+        \item Aggiornare il proprio branch prima di ogni merge request (attraverso il pull da staging)
+        \item Assegnare la merge request al scrum master di riferimento (Eg. Backend: Assignee -> Alessandro)
+    \end{itemize}
+
+\section{Best practice per le commit}
+    \subsection{Creazione delle commit}
+        \begin{itemize}
+            \item Aggiungere nella commit solo i cambiamenti relativi ad una singola funzionalità. Evitare quindi di creare delle commit di grosse dimensioni, contenenti modifiche di diverso genere. 
+            \item Testare accuratamente le funzionalità interessate prima di ogni commit.
+            \item Aggiornare il file .gitignore in caso di aggiunta file spuri.
+        \end{itemize}
+    
+    \subsection{Scrittura delle commit}
+        \begin{itemize}
+            \item Specificare il tipo di operazione effettuata
+            \item Specificare l’identificativo della issue risolta
+            \item Specificare, con un breve messaggio [max 50 caratteri] in lingua inglese, l’operazione che è stata effettuata nella commit 
+        
+        \end{itemize}
+
+\subsubsection{Template}
+
+\begin{large}
+\centering{ git commit -m “\{Method\} \#\{id-issue\} – \{Commit message\}”}
+\end{large}
+
+\subsubsection{Esempi}
+\textbf{Implementazione di una nuova funzionalità:}
+\begin{center}
+    git commit -m “Implementation \#23 – Add get all users API”
+\end{center}
+\medskip \medskip
+%=================================================================================
+\textbf{Aggiornamento di una funzionalità implementata in precedenza: }
+\begin{center}
+    git commit -m “Update \#11 – Remove unused fields to UserDto class”
+\end{center}
+\medskip \medskip
+%=================================================================================
+\textbf{Risoluzione di un bug o di una issue: }
+\begin{center}
+    git commit -m “Fix  \#103 – Fix delete user API issue”
+\end{center}
+\medskip \medskip
+%=================================================================================
+Qualora dovesse risultare necessaria una commit non associata a nessuna Issue, procedere semplicemente con il messaggio della commit.\\
+\textbf{Esempi: }
+\begin{center}
+    \begin{itemize}
+        \item git commit -m “Code refactoring” 
+        \item git commit -m “Remove unused DTOs”
+    \end{itemize}
+\end{center}

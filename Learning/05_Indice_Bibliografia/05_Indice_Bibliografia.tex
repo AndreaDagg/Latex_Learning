@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage{lipsum}
+
+
+\begin{document}
+\tableofcontents
+\section{Come si crea l'indice}
+Per creare l'indice è sifficiente usare il tag \textbf{$\backslash$tableofcontents} prima di tutte le sezioni che compongono il documento
+\section{Bibliografia}
+Si Inserisce nel file .bib del progetto il libro/documento etc... e poi lo citiamo tramite il tag \textbf{cite} nel testo in cui compare. Dopo con il tag \textbf{bibliography} si crea la bibliografia dove vogliamo \cite{adams1995hitchhiker}. Nel testo ci saranno gli indici associati che nel pdf saranno cliccabili. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Prima}
+\lipsum[1]  %stampa testo d'esempio 
+\subsection{PrimaAnnidata}
+\lipsum[1]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Seconda}
+\lipsum[1]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Terza}
+\lipsum[1]
+\subsection{TerzaAnnidata1}
+\lipsum[1]
+\subsection{TerzaAnnidata2}
+\lipsum[1]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
+\end{document}

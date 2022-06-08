@@ -1,0 +1,35 @@
+\chapter{Lear Regression}
+
+\begin{lstlisting}[language=R]
+# Linear Regression ----
+
+set.seed(1)
+
+## Modello
+## Y = B0 + B1X + E
+
+n <- 100
+
+B0 <- 500
+B1 <- 0.6
+
+X <- runif(n, 1500, 2500)
+X <- sort(X)
+
+m <- B0 + B1*X
+
+### Type param: l, b, p
+plot(X, m, type="l")
+
+E <- rnorm(n, 0, 50)
+
+Y <- m + E
+
+plot(X, Y, pch=20, col="blue", ylim=c(1000, 2500))
+lines(X, m, col="red", lwd=3)
+
+
+
+
+
+\end{lstlisting}
